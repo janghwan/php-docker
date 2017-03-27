@@ -108,6 +108,11 @@ fi
 
 sed -i "s|%%DOC_ROOT%%|${DOCUMENT_ROOT}|g" "${NGINX_DIR}/conf/nginx.conf"
 
+if [ -z "${FRONT_CONTROLLER}" ]; then
+    FRONT_CONTROLLER="index.php"
+fi
+sed -i "s|%%FRONT_CONTROLLER%%|${FRONT_CONTROLLER}|g" "${NGINX_USER_CONF_DIR}/${NGINX_CONF_INCLUDE}"
+
 if [ -f "${APP_DIR}/composer.json" ]; then
     # run the composer scripts for post-deploy
     if su www-data -c "php /usr/local/bin/composer --no-ansi run-script -l" \
