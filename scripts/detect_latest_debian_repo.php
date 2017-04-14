@@ -9,9 +9,7 @@ function findLastRepo($prefix)
 {
     $client = new Client(['base_uri' => 'https://packages.cloud.google.com']);
     $response = $client->request('GET', '/apt/dists');
-    var_dump($response->getStatusCode());
-    $body = $response->getBody();
-    var_dump($body);
+    $body = $response->getBody()->getContents();
 
     $dom = new Dom();
     $dom->load($body);
