@@ -26,7 +26,7 @@ if [ -z "${GOOGLE_PROJECT_ID}" ]; then
 fi
 
 if [ -z "${RUNTIME_DISTRIBUTION}" ]; then
-    RUNTIME_DISTRIBUTION=`php detect_latest_debian_repo.php`
+    RUNTIME_DISTRIBUTION=`php scripts/detect_latest_debian_repo.php`
 fi
 
 export RUNTIME_DISTRIBUTION
