@@ -1,5 +1,7 @@
 {
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "~2.0"
+        "friendsofphp/php-cs-fixer": "~2.0",
+        "guzzlehttp/guzzle": "^6.2",
+        "paquettg/php-html-parser": "1.*"
     }
 }

@@ -26,10 +26,11 @@ if [ -z "${GOOGLE_PROJECT_ID}" ]; then
 fi
 
 if [ -z "${RUNTIME_DISTRIBUTION}" ]; then
-    RUNTIME_DISTRIBUTION="gcp-php-runtime-jessie"
+    RUNTIME_DISTRIBUTION=`php detect_latest_debian_repo.php`
 fi
 
 export RUNTIME_DISTRIBUTION
+echo "Using debian repo: ${RUNTIME_DISTRIBUTION}"
 
 SRC_TMP=$(mktemp -d)
 export BASE_IMAGE="gcr.io/${GOOGLE_PROJECT_ID}/php:${TAG}"
