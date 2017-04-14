@@ -48,8 +48,6 @@ if [ -z "${CLOUDSDK_VERBOSITY}" ]; then
     CLOUDSDK_VERBOSITY='none'
 fi
 
-sudo apt-get install ca-certificates
-
 # Install composer and defined dependencies
 which composer || \
     (

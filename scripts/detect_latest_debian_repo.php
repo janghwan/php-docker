@@ -22,7 +22,7 @@ var_dump($body);
             $repos[] = $href;
         }
     }
-    return $repos[count($repos) - 1];
+    return empty($repos) ? "$prefix-unstable" : $repos[count($repos) - 1];
 }
 
 $options = getopt('p:');
