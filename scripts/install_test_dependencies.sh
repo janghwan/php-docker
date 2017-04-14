@@ -19,7 +19,7 @@ set -ex
 
 if [ "${INSTALL_PHP5}" == "true" ]; then
     sudo apt-get update
-    sudo apt-get install -y php5-cli
+    sudo apt-get install -y php5-cli ca-certificates
 fi
 
 if [ "${INSTALL_GCLOUD}" == "true" ]; then
