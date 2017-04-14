@@ -19,7 +19,7 @@ set -ex
 
 if [ "${INSTALL_PHP5}" == "true" ]; then
     sudo apt-get update
-    sudo apt-get install -y php5-cli ca-certificates
+    sudo apt-get install -y php5-cli
 fi
 
 if [ "${INSTALL_GCLOUD}" == "true" ]; then
@@ -47,6 +47,8 @@ fi
 if [ -z "${CLOUDSDK_VERBOSITY}" ]; then
     CLOUDSDK_VERBOSITY='none'
 fi
+
+sudo apt-get install ca-certificates
 
 # Install composer and defined dependencies
 which composer || \
