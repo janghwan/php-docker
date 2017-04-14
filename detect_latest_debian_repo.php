@@ -5,7 +5,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 use GuzzleHttp\Client;
 use PHPHtmlParser\Dom;
 
-function findLastRepo($prefix) {
+function findLastRepo($prefix)
+{
     $client = new Client(['base_uri' => 'https://packages.cloud.google.com']);
     $response = $client->request('GET', '/apt/dists');
     $body = $response->getBody();
